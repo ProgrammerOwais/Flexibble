@@ -41,35 +41,64 @@ export const createProjectMutation = `
             }
         }
      }`;
-export const projectsQuery = `
-  query getProjects($category: String , $endcursor: String) {
-    projectSearch(first: 8, after: $endcursor, filter: {category: {eq: $category}}) {
-      pageInfo {
-        hasNextPage
-        hasPreviousPage
-        startCursor
-        endCursor
-      }
-      edges {
-        node {
-          title
-          githubUrl
-          description
-          liveSiteUrl
+// export const projectsQuery = `
+//   query getProjects($category: String , $endcursor: String) {
+//     projectSearch(first: 8, after: $endcursor, filter: {category: {eq: $category}}) {
+//       pageInfo {
+//         hasNextPage
+//         hasPreviousPage
+//         startCursor
+//         endCursor
+//       }
+//       edges {
+//         node {
+//           title
+//           githubUrl
+//           description
+//           liveSiteUrl
+//           id
+//           image
+//           category
+//           createdBy {
+//             id
+//             email
+//             name
+//             avatarUrl
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+export const projectsQuery = `query getProjects($category: String, $endcursor: String) {
+  projectSearch(first: 8, after: $endcursor, filter: { category: { or: [{ eq: $category }, { isNull: true }] } }) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    edges {
+      node {
+        title
+        githubUrl
+        description
+        liveSiteUrl
+        id
+        image
+        category
+        createdBy {
           id
-          image
-          category
-          createdBy {
-            id
-            email
-            name
-            avatarUrl
-          }
+          email
+          name
+          avatarUrl
         }
       }
     }
   }
+}
 `;
+
 export const getProjectByIdQuery = `
   query GetProjectById($id: ID!) {
     project(by: { id: $id }) {
