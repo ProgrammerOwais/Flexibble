@@ -41,63 +41,70 @@ export const createProjectMutation = `
             }
         }
      }`;
-// export const projectsQuery = `
-//   query getProjects($category: String , $endcursor: String) {
-//     projectSearch(first: 8, after: $endcursor, filter: {category: {eq: $category}}) {
-//       pageInfo {
-//         hasNextPage
-//         hasPreviousPage
-//         startCursor
-//         endCursor
-//       }
-//       edges {
-//         node {
-//           title
-//           githubUrl
-//           description
-//           liveSiteUrl
-//           id
-//           image
-//           category
-//           createdBy {
-//             id
-//             email
-//             name
-//             avatarUrl
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-export const projectsQuery = `query getProjects($category: String, $endcursor: String) {
-  projectSearch(first: 8, after: $endcursor, filter: { category: { or: [{ eq: $category }, { isNull: true }] } }) {
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
-    }
-    edges {
-      node {
-        title
-        githubUrl
-        description
-        liveSiteUrl
-        id
-        image
-        category
-        createdBy {
+export const projectsQuery = `
+  query getProjects($category: String , $endcursor: String) {
+    projectSearch(first: 8, after: $endcursor, filter: {category: {eq: $category}}) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+      edges {
+        node {
+          title
+          githubUrl
+          description
+          liveSiteUrl
           id
-          email
-          name
-          avatarUrl
+          image
+          category
+          createdBy {
+            id
+            email
+            name
+            avatarUrl
+          }
         }
       }
     }
   }
-}
 `;
+// gpt help
+// export const projectsQuery = `query getProjects($category: String, $endcursor: String) {
+//   projectSearch(first: 8, after: $endcursor, filter: {
+//     or: [
+//       { category: { eq: $category } },
+//       { category: { isNull: true } }
+//     ]
+//   }) {
+//     pageInfo {
+//       hasNextPage
+//       hasPreviousPage
+//       startCursor
+//       endCursor
+//     }
+//     edges {
+//       node {
+//         title
+//         githubUrl
+//         description
+//         liveSiteUrl
+//         id
+//         image
+//         category
+//         createdBy {
+//           id
+//           email
+//           name
+//           avatarUrl
+//         }
+//       }
+//     }
+//   }
+// }
+
+// `;
 
 export const getProjectByIdQuery = `
   query GetProjectById($id: ID!) {
