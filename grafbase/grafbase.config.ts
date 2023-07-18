@@ -1,5 +1,4 @@
 import { g, auth, config } from "@grafbase/sdk";
-import { rule } from "postcss";
 // @ts-ignore
 const User = g
   .model("User", {
@@ -9,6 +8,7 @@ const User = g
     description: g.string().optional(),
     githubUrl: g.url().optional(),
     linkdinUrl: g.url().optional(),
+    // @ts-ignore
     projects: g
       .relation(() => Project)
       .list()
@@ -24,6 +24,7 @@ const Project = g
     liveSiteUrl: g.url(),
     githubUrl: g.url(),
     category: g.string().search(),
+    // @ts-ignore
     createdBy: g.relation(() => User),
   })
   .auth((rules) => {
