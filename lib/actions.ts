@@ -92,13 +92,13 @@ export const createNewProject = async (
     return makeGraphQLRequest(createProjectMutation, variables);
   }
 };
-export const fetchAllProjects = async (
-  category?: string | null,
-  endcursor?: string | null
-) => {
-  client.setHeader("x-api-key", apiKey);
-  return makeGraphQLRequest(projectsQuery, { category, endcursor });
-};
+export const fetchAllProjects = async () =>
+  // category?: string | null,
+  // endcursor?: string | null
+  {
+    client.setHeader("x-api-key", apiKey);
+    return makeGraphQLRequest(projectsQuery, {});
+  };
 export const getProjectDetails = async (id: string) => {
   client.setHeader("x-api-key", apiKey);
   return makeGraphQLRequest(getProjectByIdQuery, { id });
