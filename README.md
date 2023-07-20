@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Flexibble Web App
 
-## Getting Started
+## Show Your Remarkable Works Here & Get Hired
 
-First, run the development server:
+## About The App
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The app is built on top of next.js with robustic features. I am very happy after the completetion of this project. In this web app your can show your
+awesome & talented work in here, where people can see your awsome projects & get yourself hired from this platform.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This app has a following features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+=> The app is fully responsive & fullstack.
 
-## Learn More
+=> google login/logout.
 
-To learn more about Next.js, take a look at the following resources:
+=> filterration.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+=> pagination.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+=> Everything is on role base, nobody can't change other user projects.
 
-## Deploy on Vercel
+=> From user profile pic to projects everything is interconnected.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+=> can show your awesome projects, create it & edit it.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+=> You can show your github source code & live site.
+
+=> You can check specific user projects & get a chance to talk with it.
+
+=> The design is very aesthetic & responsive.
+
+## Technologies
+
+1. HTML
+
+2. CSS
+
+3. Tailwind
+
+4. JavaScript
+
+5. Typescript
+
+6. React
+
+7. Next.js (backend)
+
+8. Grafbase
+
+9. cloudinary
+
+10. JWT
+
+## What I Learned
+
+I learned & get a lot experinece during the development of this interesting app.
+During the development I faced a lot of issues but after searching, get a lot of knowledge about frontend & backend & their connectivity. I used grafbase very first time & get a good hand on knowledge about it, I was also facing some typescript related issues but after that get a good grisp on it too.
+I learned a lot, can't tell you everything, but after the completetion of this project, I am very confident that now I can tackle MERN base proejcts & most specifically Next.js. Happy day.
+
+### Big credit goes to JSM ( JavaScript Mastery ) & Github Community

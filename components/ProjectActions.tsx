@@ -5,7 +5,7 @@ import { useState } from "react";
 import { deleteProject, fetchToken } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 
-const ProjectActions = async ({ projectId }: { projectId: string }) => {
+const ProjectActions = ({ projectId }: { projectId: string }) => {
   const router = useRouter();
   const [isDeleting, setisDeleting] = useState(false);
   const handleDelete = async () => {
