@@ -15,6 +15,7 @@ const User = g
       .optional(),
   })
   .auth((rules) => rules.public().read());
+//checking
 // @ts-ignore
 const Project = g
   .model("Project", {
