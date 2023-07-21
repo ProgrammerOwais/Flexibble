@@ -12,7 +12,7 @@ const CustomMenu = ({ title, state, filters, setState }: Props) => {
       <label htmlFor={title} className="w-full text-gray-100 relative">
         {title}
       </label>
-      <Menu as="div" className="self-start flexStart  relative">
+      <Menu as="div" className="self-start flexStart   relative">
         <Menu.Button className="custom_menu-btn flexCenter">
           {state || "select category"}
           <Image
@@ -22,7 +22,7 @@ const CustomMenu = ({ title, state, filters, setState }: Props) => {
             height={10}
           />
         </Menu.Button>
-        <Menu.Items className="flexStart custom_menu-items">
+        <Menu.Items className="flexStart top-12 custom_menu-items">
           {filters.map((tag) => (
             <Menu.Item key={tag}>
               <button

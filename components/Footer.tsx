@@ -28,13 +28,14 @@ const Footer = () => {
       <div className="flex flex-col gap-12 w-full  mx-auto max-w-screen-xl">
         <div className="flex items-start flex-col">
           <Image
-            src="/logo-purple.svg"
-            alt="Flexxible"
-            width={115}
-            height={38}
+            src="/Owaisibble-purple.png"
+            alt="owaisibble"
+            width={200}
+            height={100}
+            className="bg-transparent w-[120px] md:w-[150px]"
           />
           <p className=" text-start text-small font-normal max-w-xs mt-5">
-            Flexibble is the world leading community for creatives to share,
+            Owaisibble is the world leading community for creatives to share,
             grow & get hired
           </p>
         </div>
@@ -74,7 +75,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flexBetween w-full footer_copyright mx-auto max-w-screen-xl">
-        <p>@ 2023, Flexibble, All rights are reserved</p>
+        <p>@ 2023, Owaisibble, All rights are reserved</p>
         <p className="text-gray">
           <span className="text-black font-semibold">10283</span> projects
           submitted

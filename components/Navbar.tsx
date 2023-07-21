@@ -13,7 +13,13 @@ const Navbar = async () => {
     <nav className="flexBetween navbar mx-auto max-w-screen-xl">
       <div className="flex-1  flex flexStart gap-10">
         <Link href={"/"}>
-          <Image src="/logo.svg" width={115} height={43} alt="flexibble" />
+          <Image
+            src="/Owaisibble.png"
+            width={150}
+            height={35}
+            className="w-[120px] md:w-[150px]"
+            alt="owaisibble"
+          />
         </Link>
         <ul className="xl:flex hidden text-small gap-7">
           {NavLinks.map((link) => (
@@ -23,7 +29,7 @@ const Navbar = async () => {
           ))}
         </ul>
       </div>
-      <div className="flexCenter gap-4">
+      <div className="flexCenter gap-2 md:gap-4">
         {session?.user ? (
           <>
             <ProfileMenu session={session} />
