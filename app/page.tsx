@@ -26,8 +26,15 @@ export const dynamic = "force-dynamic";
 export const dynamicParams = true;
 export const revalidate = 0;
 const Home = async ({ searchParams: { category, endcursor } }: Props) => {
-  const data = (await fetchAllProjects(category, endcursor)) as ProjectSearch;
-  const projectToDispay = data?.projectSearch?.edges || [];
+  const data = (await fetchAllProjects(endcursor)) as ProjectSearch;
+
+  let projectToDispay = data?.projectSearch?.edges || [];
+  if (category) {
+    projectToDispay = projectToDispay.filter(
+      (project) => project.node.category == category
+    );
+  }
+
   const pagination = data?.projectSearch?.pageInfo;
   if (projectToDispay.length === 0) {
     return (
@@ -41,7 +48,7 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
   }
   return (
     <div className="mx-auto p-4 md:max-w-[1250px]">
-      {" "}
+      {}
       <Categories />
       <section className="projects-grid borde">
         {projectToDispay.map(({ node }: { node: ProjectInterface }) => (
