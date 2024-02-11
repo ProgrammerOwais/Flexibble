@@ -1,3 +1,4 @@
+// command to run grafbase:npx grafbase@0.24 dev
 export const getUserQuery = `
 query GetUser($email:String!){
     user(by: {email:$email}){

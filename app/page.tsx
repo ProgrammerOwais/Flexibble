@@ -28,15 +28,15 @@ export const revalidate = 0;
 const Home = async ({ searchParams: { category, endcursor } }: Props) => {
   const data = (await fetchAllProjects(endcursor)) as ProjectSearch;
 
-  let projectToDispay = data?.projectSearch?.edges || [];
+  let projectToDisplay = data?.projectSearch?.edges || [];
   if (category) {
-    projectToDispay = projectToDispay.filter(
+    projectToDisplay = projectToDisplay.filter(
       (project) => project.node.category == category
     );
   }
 
   const pagination = data?.projectSearch?.pageInfo;
-  if (projectToDispay.length === 0) {
+  if (projectToDisplay.length === 0) {
     return (
       <section className="flexStart flex-col paddings">
         <Categories />
@@ -50,8 +50,8 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
     <div className="mx-auto p-4 md:max-w-[1250px]">
       {}
       <Categories />
-      <section className="projects-grid borde">
-        {projectToDispay.map(({ node }: { node: ProjectInterface }) => (
+      <section className="projects-grid">
+        {projectToDisplay.map(({ node }: { node: ProjectInterface }) => (
           <ProjectCard
             key={node.id}
             id={node.id}
